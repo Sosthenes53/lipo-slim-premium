@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lipo Slim Premium — NEXUS CLIN · Livramento-PB</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --navy-light: #162032;
+    --cream: #f5f0e8;
+    --cream-dark: #e8e0d0;
+    --gold: #c9a84c;
+    --gold-light: #e2c97e;
+    --gold-dark: #a07c30;
+    --white: #ffffff;
+    --text-muted: #8a8a8a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--cream);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 60px 24px 80px;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 50% 30%, rgba(201,168,76,0.10) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 80% 80%, rgba(201,168,76,0.06) 0%, transparent 60%);
+  }
+
+  .hero-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(201,168,76,0.4);
+    padding: 6px 18px;
+    border-radius: 2px;
+    margin-bottom: 36px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+    position: relative;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 10vw, 96px);
+    font-weight: 300;
+    line-height: 1.0;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.4s forwards;
+    position: relative;
+  }
+
+  .hero-title em { font-style: italic; color: var(--gold-light); }
+
+  .hero-subtitle-line {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(18px, 3.5vw, 32px);
+    font-weight: 300;
+    color: rgba(245,240,232,0.6);
+    letter-spacing: 2px;
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.55s forwards;
+    position: relative;
+  }
+
+  .hero-divider {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto 48px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.65s forwards;
+    position: relative;
+  }
+
+  .hero-promise {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.9;
+    max-width: 520px;
+    color: rgba(245,240,232,0.75);
+    margin-bottom: 56px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.75s forwards;
+    position: relative;
+  }
+
+  .hero-cta {
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.9s forwards;
+    position: relative;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
+    color: var(--navy);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 18px 48px;
+    border-radius: 2px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 30px rgba(201,168,76,0.25);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 40px rgba(201,168,76,0.40);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 1.2s forwards;
+  }
+
+  .hero-scroll span {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.35);
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: pulse-line 2s ease infinite;
+  }
+
+  @keyframes pulse-line {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+
+  /* SECTION BASE */
+  section { padding: 100px 24px; }
+  .container { max-width: 960px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 6vw, 60px);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+
+  .section-title em { font-style: italic; color: var(--gold-light); }
+
+  /* PROMISE STRIP */
+  .promise-strip {
+    background: var(--gold);
+    padding: 20px 24px;
+    text-align: center;
+  }
+
+  .promise-strip p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(16px, 3vw, 22px);
+    font-weight: 500;
+    color: var(--navy);
+    letter-spacing: 1px;
+  }
+
+  /* DOR SECTION */
+  .dor-section {
+    background: var(--navy-light);
+    border-top: 1px solid rgba(201,168,76,0.1);
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .dor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    margin-top: 48px;
+  }
+
+  .dor-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .dor-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(245,240,232,0.75);
+    line-height: 1.6;
+  }
+
+  .dor-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+    margin-top: 8px;
+  }
+
+  .dor-closing {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: var(--gold-light);
+    line-height: 1.5;
+    border-left: 2px solid var(--gold);
+    padding-left: 20px;
+  }
+
+  /* FLOW */
+  .flow-section { background: var(--navy-light); }
+
+  .flow-grid {
+    display: grid;
+    gap: 0;
+    margin-top: 64px;
+  }
+
+  .flow-step {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 32px;
+    padding: 40px 0;
+    border-bottom: 1px solid rgba(245,240,232,0.06);
+    align-items: start;
+    transition: background 0.3s ease;
+  }
+
+  .flow-step:last-child { border-bottom: none; }
+
+  .flow-step:hover {
+    background: rgba(201,168,76,0.03);
+    margin: 0 -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .step-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: rgba(201,168,76,0.25);
+    line-height: 1;
+    padding-top: 4px;
+  }
+
+  .step-tag {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .step-desc {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(245,240,232,0.65);
+    max-width: 560px;
+  }
+
+  .step-time {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(201,168,76,0.6);
+    border-left: 2px solid var(--gold);
+    padding-left: 10px;
+  }
+
+  /* RESULTS */
+  .results-section {
+    background: var(--navy);
+    text-align: center;
+  }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 64px;
+    margin-bottom: 80px;
+  }
+
+  .stat-box {
+    background: var(--navy-light);
+    padding: 48px 24px;
+    border: 1px solid rgba(201,168,76,0.08);
+    transition: border-color 0.3s ease;
+  }
+
+  .stat-box:hover { border-color: rgba(201,168,76,0.3); }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 8vw, 80px);
+    font-weight: 300;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.5);
+    line-height: 1.5;
+  }
+
+  .diff-list {
+    margin-top: 56px;
+    display: grid;
+    gap: 20px;
+    text-align: left;
+  }
+
+  .diff-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 28px 32px;
+    background: var(--navy-light);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 2px 2px 0;
+  }
+
+  .diff-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(201,168,76,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 16px;
+  }
+
+  .diff-text h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  .diff-text p {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(245,240,232,0.6);
+  }
+
+  /* PRICING */
+  .pricing-section {
+    background: var(--cream);
+    color: var(--navy);
+  }
+
+  .pricing-section .section-label { color: var(--gold-dark); }
+  .pricing-section .section-title { color: var(--navy); }
+
+  .price-card {
+    background: var(--navy);
+    color: var(--cream);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 56px;
+    box-shadow: 0 24px 80px rgba(13,27,42,0.3);
+  }
+
+  .price-card-header {
+    background: linear-gradient(135deg, var(--navy-light), var(--navy));
+    padding: 48px 48px 40px;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .price-card-header::after {
+    content: 'PREMIUM';
+    position: absolute;
+    top: 20px;
+    right: -20px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 6px 32px;
+    transform: rotate(45deg) translateX(10px);
+  }
+
+  .price-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .price-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    margin-bottom: 8px;
+  }
+
+  .price-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(245,240,232,0.6);
+    max-width: 480px;
+    line-height: 1.7;
+  }
+
+  .price-card-body { padding: 48px; }
+
+  .price-includes { margin-bottom: 48px; }
+
+  .price-includes h4 {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  .include-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(245,240,232,0.06);
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  .include-item:last-child { border-bottom: none; }
+
+  .include-check {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 10px;
+    color: var(--gold);
+  }
+
+  .price-value-block {
+    background: rgba(201,168,76,0.05);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 3px;
+    padding: 36px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  .price-installment {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(245,240,232,0.5);
+    margin-bottom: 4px;
+  }
+
+  .price-installment strong { color: var(--gold-light); font-weight: 600; }
+
+  .price-big {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px;
+    font-weight: 300;
+    color: var(--gold-light);
+    line-height: 1;
+  }
+
+  .price-big sup {
+    font-size: 28px;
+    vertical-align: top;
+    padding-top: 12px;
+    display: inline-block;
+  }
+
+  .price-or {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.3);
+    margin-top: 8px;
+  }
+
+  .price-pix {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(245,240,232,0.6);
+    margin-top: 4px;
+  }
+
+  .price-pix strong { color: var(--gold-light); font-weight: 600; }
+
+  .price-economia {
+    font-size: 11px;
+    color: var(--gold);
+    margin-top: 8px;
+    font-style: italic;
+  }
+
+  .price-avulsa {
+    font-size: 12px;
+    color: rgba(245,240,232,0.3);
+    text-decoration: line-through;
+    margin-top: 4px;
+  }
+
+  .price-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-end;
+  }
+
+  .btn-gold {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
+    color: var(--navy);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 18px 40px;
+    border-radius: 2px;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 24px rgba(201,168,76,0.3);
+    white-space: nowrap;
+  }
+
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 36px rgba(201,168,76,0.45);
+  }
+
+  .btn-outline {
+    display: inline-block;
+    background: transparent;
+    color: rgba(245,240,232,0.6);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 30px;
+    border: 1px solid rgba(245,240,232,0.2);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: border-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* FAQ */
+  .faq-section { background: var(--navy-light); }
+
+  .faq-list {
+    margin-top: 56px;
+    display: grid;
+    gap: 2px;
+  }
+
+  .faq-item {
+    background: rgba(13,27,42,0.5);
+    border: 1px solid rgba(245,240,232,0.06);
+    overflow: hidden;
+  }
+
+  .faq-q {
+    padding: 24px 28px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.3px;
+    transition: color 0.3s ease;
+    user-select: none;
+  }
+
+  .faq-q:hover { color: var(--gold-light); }
+
+  .faq-icon {
+    font-size: 20px;
+    color: var(--gold);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+  }
+
+  .faq-a.open {
+    max-height: 400px;
+    padding: 0 28px 24px;
+  }
+
+  .faq-a p {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.9;
+    color: rgba(245,240,232,0.6);
+    border-top: 1px solid rgba(245,240,232,0.06);
+    padding-top: 20px;
+  }
+
+  .faq-item.active .faq-icon { transform: rotate(45deg); }
+
+  /* FOOTER */
+  .footer {
+    background: #070f18;
+    padding: 60px 24px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .footer-sub {
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.3);
+    margin-bottom: 16px;
+  }
+
+  .footer-local {
+    font-size: 11px;
+    color: rgba(245,240,232,0.4);
+    margin-bottom: 32px;
+    letter-spacing: 1px;
+  }
+
+  .footer-note {
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(245,240,232,0.25);
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* FLOATING CTA */
+  .floating-cta {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 100;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .floating-cta.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .floating-cta a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+    transition: transform 0.3s, box-shadow 0.3s;
+    white-space: nowrap;
+  }
+
+  .floating-cta a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 28px rgba(37,211,102,0.5);
+  }
+
+  .wa-icon {
+    width: 20px;
+    height: 20px;
+    fill: white;
+    flex-shrink: 0;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 640px) {
+    .dor-grid { grid-template-columns: 1fr; gap: 40px; }
+    .stats-row { grid-template-columns: 1fr; }
+    .price-value-block { flex-direction: column; align-items: flex-start; }
+    .price-cta { align-items: flex-start; width: 100%; }
+    .btn-gold, .btn-outline { width: 100%; text-align: center; }
+    .price-card-body { padding: 32px 24px; }
+    .price-card-header { padding: 36px 24px 32px; }
+    .flow-step { grid-template-columns: 40px 1fr; gap: 20px; }
+    .step-number { font-size: 36px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">NEXUS CLIN · Livramento · Paraíba</div>
+  <h1 class="hero-title">Lipo Slim<br><em>Premium</em></h1>
+  <p class="hero-subtitle-line">Remodelação Corporal Intensiva</p>
+  <div class="hero-divider"></div>
+  <p class="hero-promise">
+    Quatro semanas. Cinco etapas. Um protocolo construído para o que insiste em ficar.<br>
+    Ativos lipolíticos, manta térmica e fototermoterapia — sem cirurgia, sem cortes, sem recuperação.
+  </p>
+  <div class="hero-cta" style="display:flex;flex-direction:column;align-items:center;gap:16px;">
+    <a href="#pricing" class="btn-primary">Quero conhecer o protocolo</a>
+    <a href="https://wa.me/5583998585691?text=Ol%C3%A1%21%20Vi%20o%20Lipo%20Slim%20Premium%20e%20quero%20falar%20com%20a%20equipe%20NEXUS." style="font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(245,240,232,0.5);text-decoration:none;border-bottom:1px solid rgba(245,240,232,0.2);padding-bottom:2px;transition:color 0.3s;">Falar com a equipe →</a>
+  </div>
+  <div class="hero-scroll">
+    <span>Descubra</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- PROMISE STRIP -->
+<div class="promise-strip">
+  <p>Redução de medidas acompanhada. Resultado documentado. Sem bisturi.</p>
+</div>
+
+<!-- DOR -->
+<section class="dor-section">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Para quem é</p>
+      <h2 class="section-title">Você reconhece<br><em>alguma dessas situações?</em></h2>
+    </div>
+    <div class="dor-grid reveal">
+      <div class="dor-list">
+        <div class="dor-item"><div class="dor-dot"></div><span>Você malha, faz dieta, e aquela gordura localizada simplesmente não sai</span></div>
+        <div class="dor-item"><div class="dor-dot"></div><span>Tem um evento chegando e quer uma mudança visível em poucas semanas</span></div>
+        <div class="dor-item"><div class="dor-dot"></div><span>Perdeu peso mas o contorno corporal não acompanhou</span></div>
+        <div class="dor-item"><div class="dor-dot"></div><span>Quer resultado real sem se submeter a cirurgia ou recuperação longa</span></div>
+        <div class="dor-item"><div class="dor-dot"></div><span>Já tentou cremes, massagens e aparelhos — e quer algo com protocolo clínico de verdade</span></div>
+      </div>
+      <div>
+        <p class="dor-closing">Gordura localizada que não responde à dieta nem ao treino tem uma razão clínica. O Lipo Slim Premium age nessa razão — com acompanhamento profissional do início ao fim.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px;" class="reveal">
+      <a href="https://wa.me/5583998585691?text=Ol%C3%A1%21%20Vi%20o%20Lipo%20Slim%20Premium%20e%20quero%20agendar%20minha%20avalia%C3%A7%C3%A3o." class="btn-primary" style="font-size:10px;padding:14px 36px;">Agende sua avaliação →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="flow-section">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">O Protocolo</p>
+      <h2 class="section-title">Cinco etapas.<br><em>Uma sessão de 60 minutos.</em></h2>
+      <p style="font-size:14px;font-weight:300;color:rgba(245,240,232,0.6);line-height:1.8;max-width:560px;margin-top:16px;">Cada sessão é uma experiência integrada. Cinco etapas que trabalham em conjunto para potencializar a redução de gordura localizada e o contorno corporal — com cuidado, técnica e acompanhamento.</p>
+    </div>
+
+    <div class="flow-grid">
+
+      <div class="flow-step reveal reveal-delay-1">
+        <div class="step-number">01</div>
+        <div class="step-content">
+          <p class="step-tag">Ritual de Chegada</p>
+          <h3 class="step-title">Chá Drenante Termogênico</h3>
+          <p class="step-desc">A sessão começa com o Chá Diurex — blend com matcha, hibisco, cúrcuma, gengibre e pimenta caiena. Servido quente ou gelado, ele prepara o organismo para a sessão com ação diurética leve e estímulo termogênico suave. O protocolo começa antes mesmo da primeira aplicação. O mesmo chá é levado para casa para consumo diário entre as sessões, mantendo o estímulo ativo durante toda a semana.</p>
+          <span class="step-time">5 minutos · Incluso para uso diário em casa</span>
+        </div>
+      </div>
+
+      <div class="flow-step reveal reveal-delay-1">
+        <div class="step-number">02</div>
+        <div class="step-content">
+          <p class="step-tag">Aplicação Clínica</p>
+          <h3 class="step-title">Ativo Lipolítico Localizado</h3>
+          <p class="step-desc">Aplicação injetável direcionada com ativo lipolítico em formulação lipossomada — para auxiliar na redução de gordura localizada e melhora do contorno corporal. A formulação lipossomada melhora a absorção e o conforto durante a aplicação. Realizada por enfermeiro especialista, com mapeamento da região tratada e técnica precisa para resultado progressivo e seguro. Fórmula indicada para abdômen, flancos e região de gordura localizada resistente.</p>
+          <span class="step-time">15 minutos · Aplicação por enfermeiro especialista</span>
+        </div>
+      </div>
+
+      <div class="flow-step reveal reveal-delay-2">
+        <div class="step-number">03</div>
+        <div class="step-content">
+          <p class="step-tag">Potencialização Tópica</p>
+          <h3 class="step-title">Gel Termogênico Ativo</h3>
+          <p class="step-desc">Imediatamente após a aplicação, o Gel Termogênico com Cafeína 3% e Liporeductyl 5% é massageado na região tratada. Ele mantém o estímulo lipolítico ativo nas horas seguintes, eleva a temperatura local e prepara o tecido para a etapa de manta térmica. A combinação de aplicação injetável + gel tópico cria um efeito sinérgico que potencializa o resultado de cada sessão.</p>
+          <span class="step-time">5 minutos · Potencialização imediata</span>
+        </div>
+      </div>
+
+      <div class="flow-step reveal reveal-delay-2">
+        <div class="step-number">04</div>
+        <div class="step-content">
+          <p class="step-tag">Termoterapia Corporal</p>
+          <h3 class="step-title">Manta Térmica Profissional</h3>
+          <p class="step-desc">Sessão de 30 a 40 minutos com manta de corpo inteiro. Você descansa — e o calor trabalha. O aumento de temperatura corporal amplia a absorção dos ativos, estimula a circulação periférica e acelera o processo de drenagem linfática natural. É a etapa mais relaxante do protocolo. Muitas pacientes descrevem a sensação como a de um banho de ofurô seco — profundo, envolvente e restaurador.</p>
+          <span class="step-time">30–40 minutos · Corpo inteiro · Relaxamento profundo</span>
+        </div>
+      </div>
+
+      <div class="flow-step reveal reveal-delay-3">
+        <div class="step-number">05</div>
+        <div class="step-content">
+          <p class="step-tag">Finalização</p>
+          <h3 class="step-title">Fototermoterapia Drenante</h3>
+          <p class="step-desc">Finalização com massageador de LED vermelho e aquecimento ativo. O LED vermelho estimula a produção de colágeno, melhora a elasticidade da pele e contribui para a firmeza da região tratada. A drenagem mecânica fecha a sessão com leveza, reduzindo qualquer sensação residual de tensão. É o toque final que diferencia o Lipo Slim Premium de qualquer outro protocolo disponível na região.</p>
+          <span class="step-time">10–15 minutos · Firmeza · Colágeno · Finalização sensorial</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results-section">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Por que funciona</p>
+      <h2 class="section-title">Protocolo estruturado<br><em>com acompanhamento profissional.</em></h2>
+    </div>
+
+    <div class="stats-row reveal">
+      <div class="stat-box">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Semanas de<br>Protocolo Completo</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">5</div>
+        <div class="stat-label">Etapas por<br>Sessão Integrada</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">60<span style="font-size:0.4em">min</span></div>
+        <div class="stat-label">Por Sessão<br>Semanal</div>
+      </div>
+    </div>
+
+    <div class="diff-list reveal">
+      <div class="diff-item">
+        <div class="diff-icon">◈</div>
+        <div class="diff-text">
+          <h4>Ativo lipolítico em formulação lipossomada</h4>
+          <p>Menos desconforto, melhor absorção e resultado mais consistente. A formulação lipossomada melhora a biodisponibilidade do ativo e reduz o desconforto em relação às versões convencionais. Protocolo individualizado conforme região e objetivo de cada paciente.</p>
+        </div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-icon">◈</div>
+        <div class="diff-text">
+          <h4>Resultado documentado e mensurável</h4>
+          <p>Medidas aferidas na semana 0 e na semana 4. Fotografia padronizada da região tratada. Você acompanha cada centímetro de evolução com dados reais — não percepção subjetiva. O resultado é registrado, não prometido.</p>
+        </div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-icon">◈</div>
+        <div class="diff-text">
+          <h4>Protocolo contínuo — dentro e fora da clínica</h4>
+          <p>O chá drenante é consumido diariamente em casa entre as sessões. O estímulo clínico semanal é amplificado pelo protocolo domiciliar. Quatro semanas de ativação metabólica consistente — não apenas um procedimento pontual.</p>
+        </div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-icon">◈</div>
+        <div class="diff-text">
+          <h4>Sem cirurgia. Sem recuperação. Sem ausência do trabalho.</h4>
+          <p>Você sai da sessão e segue sua rotina normalmente. Pode haver leve vermelhidão local transitória nas primeiras horas, o que é esperado e passa rapidamente. Sem internação, sem edema significativo, sem restrição de atividades. O resultado acontece sem interromper a sua vida.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Investimento</p>
+      <h2 class="section-title">Protocolo completo.<br><em>4 semanas de acompanhamento.</em></h2>
+    </div>
+
+    <div class="price-card reveal">
+      <div class="price-card-header">
+        <p class="price-label">Lipo Slim — Protocolo Exclusivo</p>
+        <h3 class="price-name">Premium</h3>
+        <p class="price-desc">Experiência completa com aplicação lipolítica injetável, gel termogênico, manta térmica profissional e fototermoterapia de finalização com LED vermelho. Chá Drenante Diurex incluso para uso domiciliar durante as 4 semanas. Aferição de medidas e registro fotográfico inclusos.</p>
+      </div>
+
+      <div class="price-card-body">
+        <div class="price-includes">
+          <h4>O que está incluso</h4>
+          <div class="include-item"><div class="include-check">✓</div>4 sessões de aplicação lipolítica localizada (1x por semana)</div>
+          <div class="include-item"><div class="include-check">✓</div>4 sessões de manta térmica corpo inteiro (30–40 min cada)</div>
+          <div class="include-item"><div class="include-check">✓</div>Gel termogênico aplicado em todas as sessões</div>
+          <div class="include-item"><div class="include-check">✓</div>4 sessões de fototermoterapia com LED vermelho</div>
+          <div class="include-item"><div class="include-check">✓</div>1 pote de Chá Drenante Diurex para uso domiciliar</div>
+          <div class="include-item"><div class="include-check">✓</div>Aferição de medidas na semana 0 e semana 4</div>
+          <div class="include-item"><div class="include-check">✓</div>Registro fotográfico de evolução</div>
+          <div class="include-item"><div class="include-check">✓</div>Atendimento por enfermeiro especialista em todas as sessões</div>
+        </div>
+
+        <div class="price-value-block">
+          <div class="price-main">
+            <div class="price-big"><sup>R$</sup>700</div>
+            <p class="price-or">Pacote completo · 4 sessões · Pix</p>
+            <p class="price-pix">ou <strong>4x R$ 184</strong> no cartão sem juros</p>
+            <p class="price-economia">Você economiza R$ 296 em relação às sessões avulsas</p>
+            <p class="price-installment" style="margin-top:10px;">Sessão avulsa: <strong>R$ 249</strong></p>
+          </div>
+          <div class="price-cta">
+            <a href="https://wa.me/5583998585691?text=Olá!%20Vi%20o%20Lipo%20Slim%20Premium%20e%20quero%20agendar%20minha%20avaliação." class="btn-gold">Agendar agora</a>
+            <a href="https://wa.me/5583998585691?text=Olá!%20Tenho%20uma%20dúvida%20sobre%20o%20Lipo%20Slim%20Premium." class="btn-outline">Tirar dúvidas</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Dúvidas Frequentes</p>
+      <h2 class="section-title">Tudo que você<br><em>precisa saber.</em></h2>
+    </div>
+
+    <div class="faq-list reveal">
+
+      <div class="faq-item">
+        <div class="faq-q">A aplicação dói?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>A sensação é de pequenas picadas superficiais — semelhante a uma mesoterapia leve. A formulação lipossomada que utilizamos reduz significativamente o desconforto em relação às versões convencionais. A maioria das pacientes relata uma sensação de formigamento localizado que cessa rapidamente após a aplicação. Durante a manta térmica, o conforto é total — é a etapa mais relaxante da sessão.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Em quanto tempo aparecem os resultados?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>As primeiras mudanças de medida começam a ser notadas entre a segunda e a terceira sessão. O resultado completo é avaliado ao final das 4 semanas, na aferição de medidas com comparação da semana 0. Resultados individuais podem variar conforme biotipo, hábitos alimentares e nível de atividade física durante o protocolo.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Posso continuar minha rotina normalmente após a sessão?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Sim. Não há restrição de atividades após as sessões. Você sai da clínica e segue normalmente com seu dia. Pode haver leve vermelhidão ou sensibilidade local nas primeiras horas após a aplicação — isso é normal, esperado e passa rapidamente. Recomendamos hidratação reforçada no dia da sessão e nos dias seguintes para potencializar a eliminação.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">O protocolo é indicado para qualquer pessoa?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>O protocolo é indicado para adultos que desejam redução de medidas localizadas, principalmente na região abdominal, flancos e braços. Não é indicado para gestantes, lactantes e pessoas com condições inflamatórias ativas na região a ser tratada, infecções de pele, distúrbios de coagulação ou hipersensibilidade aos componentes da formulação. Uma avaliação prévia é necessária para confirmar a indicação.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">As sessões precisam ser semanais?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Sim. O intervalo semanal é parte essencial do protocolo clínico. Ele garante que o tecido responda adequadamente entre as sessões, que o estímulo seja progressivo e que o resultado seja construído de forma segura e consistente. Sessões com intervalo menor que 7 dias não são recomendadas. O protocolo completo de 4 sessões deve ser realizado em 4 semanas consecutivas.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Como funciona o chá drenante?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>O Chá Diurex é consumido diariamente em casa, entre as sessões. Seu blend com matcha, hibisco, cúrcuma, gengibre e pimenta caiena tem ação diurética suave, estímulo termogênico leve e propriedades anti-inflamatórias. Ele potencializa o efeito da sessão clínica ao manter o organismo em estado de ativação metabólica durante toda a semana — não apenas nas 60 minutos da sessão. Um pote está incluso no pacote.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">O protocolo funciona para homens também?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Sim. O Lipo Slim Premium é indicado para homens e mulheres adultos que desejam redução de gordura localizada — principalmente abdômen, flancos e braços. A avaliação prévia define a região a ser tratada, a intensidade do protocolo e o número de aplicações por sessão conforme o perfil de cada paciente.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Posso pagar parcelado?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Sim. O pacote completo (4 sessões) pode ser pago à vista via Pix por R$ 700, ou parcelado em até 4x de R$ 184 no cartão de crédito sem juros. Sessões avulsas estão disponíveis por R$ 249 cada, para quem preferir experimentar antes de fechar o pacote.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">NEXUS CLIN</div>
+  <div class="footer-sub">Centro de Performance Metabólica & Longevidade</div>
+  <div class="footer-local">Livramento · Paraíba · (83) 99858-5691</div>
+  <p class="footer-note">Procedimento estético realizado por Enf. Sosthenes Santos · COREN-PB 568176 · EPA. Resultados individuais podem variar conforme biotipo, hábitos e resposta individual ao protocolo.</p>
+  <a href="https://sosthenes53.github.io/portifolio-nexus/" style="display:inline-block;margin-top:24px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(201,168,76,0.5);text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.2);padding-bottom:2px;">Ver todos os serviços NEXUS CLIN →</a>
+</footer>
+
+<!-- FLOATING CTA -->
+<div class="floating-cta" id="floatingCta">
+  <a href="https://wa.me/5583998585691?text=Ol%C3%A1%21%20Quero%20agendar%20o%20Lipo%20Slim%20Premium%20na%20NEXUS.">
+    <svg class="wa-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Agendar agora
+  </a>
+</div>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  window.addEventListener('scroll', () => {
+    const floatingCta = document.getElementById('floatingCta');
+    if(window.scrollY > 300) {
+      floatingCta.classList.add('visible');
+    } else {
+      floatingCta.classList.remove('visible');
+    }
+  });
+
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', function() {
+      const item = this.closest('.faq-item');
+      item.classList.toggle('active');
+      this.nextElementSibling.classList.toggle('open');
+    });
+  });
+</script>
+
+</body>
+</html>
